@@ -13,7 +13,7 @@ var http = require('http');
  */
 
 // clearlove7
-var port = normalizePort(process.env.PORT || 9588)
+var port = normalizePort(process.env.PORT || 10000)
 // app.set('port', port);
 
 /**
