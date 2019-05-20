@@ -37,10 +37,9 @@ function isOriginAllowed(origin, allowedOrigin) {
 const ALLOW_ORIGIN = [
   // 域名白名单
   "http://localhost:8888",
-  "http://192.168.1.106:9999",
   "http://localhost:9999",
-  "https://118.24.35.13:8888",
-  "https://118.24.35.13:9999"
+  "https://blog.yuanxinfeng.xyz",
+  "https://adminblog.yuanxinfeng.xyz"
 ];
 app.use(
   cors({
