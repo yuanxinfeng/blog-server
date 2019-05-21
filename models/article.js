@@ -1,7 +1,7 @@
 /*
- * @Author: Pawn 
+ * @Author: Yuanxinfeng 
  * @Date: 2018-08-14 11:33:10 
- * @Last Modified by: Pawn
+ * @Last Modified by: Yuanxinfeng
  * @Last Modified time: 2018-08-19 14:05:44
  */
 const Article = require("../db").Article;

@@ -1,7 +1,7 @@
 /*
- * @Author: Pawn
+ * @Author: Yuanxinfeng
  * @Date: 2018-08-14 16:16:22
- * @Last Modified by: Pawn
+ * @Last Modified by: Yuanxinfeng
  * @Last Modified time: 2018-08-14 17:16:17
  */
 const User = require("../db").User;

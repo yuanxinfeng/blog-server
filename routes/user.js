@@ -1,14 +1,14 @@
 /*
- * @Author: Pawn 
+ * @Author: Yuanxinfeng 
  * @Date: 2018-08-14 16:16:17 
- * @Last Modified by: Pawn
+ * @Last Modified by: Yuanxinfeng
  * @Last Modified time: 2018-08-31 09:04:51
  */
 const router = require('koa-router')();
 const User = require('../db').User;
 const userModel = require('../models/user');
 const sha1 = require('sha1');
-const SHA1_ADD_STR = "pawn_blog_encrypted_string"
+const SHA1_ADD_STR = "Yuanxinfeng_blog_encrypted_string"
 const {create_token,check_token_code} = require('../utils/token')
 const Checkcode = require('../db').Checkcode;
 

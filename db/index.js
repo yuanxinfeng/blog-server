@@ -86,9 +86,15 @@ let checkcodeSchema = new Schema({
   code: String
 });
 
+// 验证码
+let blogCreateTimeSchema = new Schema({
+  create_time: String
+});
+
 exports.Article = mongoose.model("Article", articleSchema);
 exports.Tag = mongoose.model("Tag", TagsSchema);
 exports.Work = mongoose.model("Work", worksSchema);
 exports.User = mongoose.model("User", UserSchema);
 exports.Setting = mongoose.model("Setting", settingSchema);
 exports.Checkcode = mongoose.model("Checkcode", checkcodeSchema);
+exports.blogCreateTime = mongoose.model("blogCreateTime", blogCreateTimeSchema);

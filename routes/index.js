@@ -5,6 +5,7 @@ const work = require('./work')
 const user = require('./user')
 const setting = require('./setting')
 const archives = require('./archives')
+const createTime = require('./createTime')
 
 router.get('/', ctx => {
   ctx.body = 'hello!'
@@ -18,4 +19,5 @@ module.exports = function (app) {
   app.use(user.routes(), user.allowedMethods());
   app.use(setting.routes(), setting.allowedMethods());
   app.use(archives.routes(), archives.allowedMethods());
+  app.use(createTime.routes(), createTime.allowedMethods());
 }
