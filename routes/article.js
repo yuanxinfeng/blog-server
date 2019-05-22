@@ -88,6 +88,7 @@ router.post("/add", async (ctx) => {
     article_title = "",
     article_tags = [],
     article_state = 0,
+    article_ready = 0,
     article_cover = "",
     article_desc = "",
     article_content = ""
@@ -107,7 +108,8 @@ router.post("/add", async (ctx) => {
       article_state,
       article_cover,
       article_desc,
-      article_content
+      article_content,
+      article_ready
     });
     let res = await article.save();
     if (res) {
@@ -228,7 +230,7 @@ router.post("/edit", async (ctx) => {
 
 // 文章 => 删除文章
 router.post("/del", async (ctx) => {
-  let _id = ctx.params.id;
+  let _id = ctx.query.id;
   try {
     if (_id.length != 24) {
       ctx.body = {
@@ -247,6 +249,43 @@ router.post("/del", async (ctx) => {
     ctx.body = {
       code: 500,
       msg: "文章删除失败！"
+    };
+  }
+});
+
+// 文章 => 添加文章阅读数
+router.get("/addReady", async (ctx) => {
+  let _id = ctx.query.id;
+
+  try {
+    let res = await articleModel.find_all({
+      querys: { _id }
+    });
+    if (res.length == 0) {
+      ctx.body = {
+        code: 401,
+        msg: "未能查到改篇文章！"
+      };
+      return;
+    }
+    res = await articleModel.update(_id, {
+      article_ready: res[0].article_ready +1
+    });
+    if (res) {
+      ctx.body = {
+        code: 200,
+        msg: "增加成功！"
+      };
+    } else {
+      ctx.body = {
+        code: 500,
+        msg: "增加失败！"
+      };
+    }
+  } catch (e) {
+    ctx.body = {
+      code: 500,
+      msg: "修改失败！！"
     };
   }
 });

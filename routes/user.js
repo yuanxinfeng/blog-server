@@ -92,7 +92,6 @@ router.post('/login', async ctx => {
       }
       return;
     }
-    
     // 验证账号密码
     res = await User.find({user_id,user_pwd:sha1(sha1(user_pwd + SHA1_ADD_STR))});
     if(res.length == 0){

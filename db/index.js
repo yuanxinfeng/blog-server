@@ -29,6 +29,10 @@ let articleSchema = new Schema({
   },
   article_cover: String,
   article_desc: String,
+  article_ready: {
+    type:Number,
+    defaule:0
+  },
   article_content: String
 });
 
