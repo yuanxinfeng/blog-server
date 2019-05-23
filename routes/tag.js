@@ -82,8 +82,8 @@ router.post('/add', async ctx => {
 })
 
 // 标签 => 修改标签
-router.patch('/edit', async ctx => {
-  let _id = ctx.params.id;
+router.post('/edit', async ctx => {
+  let _id = ctx.request.body._id;
   let { tags_name, tags_desc } = ctx.request.body;
 
   try{
@@ -137,8 +137,8 @@ router.patch('/edit', async ctx => {
 })
 
 // 标签 => 删除标签
-router.delete("/del", async ctx => {
-  let _id = ctx.params.id;
+router.post("/del", async ctx => {
+  let _id = ctx.query.id;
   try{
     if(_id.length != 24){
       ctx.body = {
