@@ -6,6 +6,7 @@ const user = require('./user')
 const setting = require('./setting')
 const archives = require('./archives')
 const createTime = require('./createTime')
+const uploadImage = require('./uploadImage')
 
 router.get('/', ctx => {
   ctx.body = 'hello!'
@@ -20,4 +21,5 @@ module.exports = function (app) {
   app.use(setting.routes(), setting.allowedMethods());
   app.use(archives.routes(), archives.allowedMethods());
   app.use(createTime.routes(), createTime.allowedMethods());
+  app.use(uploadImage.routes(), uploadImage.allowedMethods());
 }
