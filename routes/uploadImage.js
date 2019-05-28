@@ -20,7 +20,7 @@ const timeFormat = function() {
 const uploadUrl =
   process.env.NODE_ENV !== "production"
     ? `http://127.0.0.1:10000/${timeFormat()}`
-    : `https://adminblog.yuanxinfeng.xyz:10000/${timeFormat()}`;
+    : `https://yuanxinfeng.xyz:10000/${timeFormat()}`;
 router.get("/", async (ctx) => {});
 // 图片上传
 router.post("/add", async (ctx) => {
