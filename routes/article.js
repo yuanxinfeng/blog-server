@@ -91,10 +91,12 @@ router.post("/add", async (ctx) => {
     article_ready = 0,
     article_cover = "",
     article_desc = "",
-    article_content = ""
+    article_content = "",
+    article_markdown = "",
+    article_html= ""
   } = ctx.request.body;
   try {
-    if (article_title == "" || article_content == "") {
+    if (article_title == "" || article_markdown == "") {
       ctx.body = {
         code: 401,
         msg: "文章标题和文章内容不能为空！"
@@ -109,6 +111,8 @@ router.post("/add", async (ctx) => {
       article_cover,
       article_desc,
       article_content,
+      article_markdown,
+      article_html,
       article_ready
     });
     let res = await article.save();
@@ -169,10 +173,12 @@ router.post("/edit", async (ctx) => {
     article_state = 0,
     article_cover = "",
     article_desc = "",
-    article_content = ""
+    article_content = "",
+    article_markdown = "",
+    article_html = ""
   } = ctx.request.body;
   try {
-    if (article_title == "" || article_content == "") {
+    if (article_title == "" || article_markdown == "") {
       ctx.body = {
         code: 401,
         msg: "修改文章失败，文章标题和文章内容不能为空！"
@@ -205,6 +211,8 @@ router.post("/edit", async (ctx) => {
       article_cover,
       article_desc,
       article_content,
+      article_markdown,
+      article_html,
       article_update_time: new Date().getTime()
     });
     if (res) {

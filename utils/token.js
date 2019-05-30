@@ -11,8 +11,10 @@ const User = require("../db").User;
 
 function handle_401_error(opt) {
   let { ctx, msg = "你还没有登录，请先去登录!" } = opt;
-  ctx.response.status = 401;
-  ctx.response.body = msg;
+  ctx.body = {
+    code: 401,
+    msg: msg
+  };
 }
 
 module.exports = {

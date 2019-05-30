@@ -30,10 +30,12 @@ let articleSchema = new Schema({
   article_cover: String,
   article_desc: String,
   article_ready: {
-    type:Number,
-    defaule:0
+    type: Number,
+    defaule: 0
   },
-  article_content: String
+  article_content: String,
+  article_markdown: String,
+  article_html: String
 });
 
 // 标签表
@@ -95,6 +97,12 @@ let blogCreateTimeSchema = new Schema({
   create_time: String
 });
 
+// 上传文件
+let fileSchema = new Schema({
+  file_path: String,
+  file_url: String,
+  file_dir: String
+});
 exports.Article = mongoose.model("Article", articleSchema);
 exports.Tag = mongoose.model("Tag", TagsSchema);
 exports.Work = mongoose.model("Work", worksSchema);
@@ -102,3 +110,4 @@ exports.User = mongoose.model("User", UserSchema);
 exports.Setting = mongoose.model("Setting", settingSchema);
 exports.Checkcode = mongoose.model("Checkcode", checkcodeSchema);
 exports.blogCreateTime = mongoose.model("blogCreateTime", blogCreateTimeSchema);
+exports.File = mongoose.model("fileSchema", fileSchema);
