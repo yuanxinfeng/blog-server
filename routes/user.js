@@ -124,7 +124,7 @@ router.post('/login', async ctx => {
 })
 
 // 用户密码修改
-router.patch('/master', async ctx => {
+router.post('/master', async ctx => {
   let {user_id = '', ori_pwd = '', new_pwd = '', re_pwd = ''} = ctx.request.body;
   try {
     if(user_id == '' || ori_pwd == '' || new_pwd == '' || re_pwd == ''){
