@@ -41,6 +41,8 @@ const ALLOW_ORIGIN = [
   "http://localhost:8080",
   "http://localhost:9999",
   "https://blog.yuanxinfeng.xyz",
+  "https://blog.yuanxinfeng.xyz:10000",
+  "https://yuanxinfeng.xyz",
   "https://adminblog.yuanxinfeng.xyz"
 ];
 app.use(
